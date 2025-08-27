@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhanu Tracker - Smart GPS Vehicle Tracking System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">BHANU TRACKER</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h1>Smart GPS Vehicle Tracking System</h1>
+    <p>Track your vehicle live 24x7 directly on your mobile.</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <h2>Our Features</h2>
+    <div class="grid">
+      <div class="card">✔ Real-time Tracking</div>
+      <div class="card">✔ Route History</div>
+      <div class="card">✔ Fuel Monitoring</div>
+      <div class="card">✔ Speed Alerts</div>
+      <div class="card">✔ Geo-fencing</div>
+      <div class="card">✔ 24x7 Support</div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">Vehicle Tracking</div>
+      <div class="card">Fleet Management</div>
+      <div class="card">AIS 140 Approved GPS Solutions</div>
+      <div class="card">Fastag + GPS Integration</div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <h2>Products</h2>
+    <div id="product-list" class="grid"></div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <h2>Pricing Plans</h2>
+    <div id="pricing-list" class="grid"></div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Office 109-A Wing, Shree Bhanushali Auto Consult, Near RTO Office Bhuj</p>
+    <p>📞 9558604183 / 9558504183</p>
+    <p>📧 bhanutracker1@gmail.com</p>
+    <a href="https://wa.me/919558604183" class="btn">WhatsApp Us</a>
+
+    <form action="https://formspree.io/f/xgegeorr" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Bhanu Tracker | All Rights Reserved</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+* {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+body {background:#f5f5f5; color:#333; line-height:1.6;}
+.navbar {display:flex; justify-content:space-between; align-items:center; padding:15px; background:#222; color:#fff; position:sticky; top:0;}
+.navbar a {color:#fff; margin:0 10px; text-decoration:none;}
+.hero {height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#0078d7; color:#fff; text-align:center;}
+.btn {display:inline-block; padding:10px 20px; background:#ff9800; color:#fff; border-radius:5px; text-decoration:none; margin-top:15px;}
+.section {padding:50px 20px; text-align:center;}
+.section h2 {margin-bottom:20px;}
+.grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px;}
+.card {background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.contact-form {max-width:400px; margin:20px auto; display:flex; flex-direction:column;}
+.contact-form input, .contact-form textarea {margin:10px 0; padding:10px; border:1px solid #ccc; border-radius:5px;}
+.contact-form button {padding:10px; background:#0078d7; color:#fff; border:none; border-radius:5px; cursor:pointer;}
+footer {background:#222; color:#fff; text-align:center; padding:15px; margin-top:20px;}
+// Load products
+const products = [
+  { name: "OBD GPS Device", desc: "Plug & play tracking", price: "₹2999" },
+  { name: "AIS 140 GPS Device", desc: "Government approved", price: "₹4999" },
+  { name: "Fleet GPS Pro", desc: "For commercial fleets", price: "₹7999" }
+];
+
+const productList = document.getElementById("product-list");
+products.forEach(p => {
+  let div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `<h3>${p.name}</h3><p>${p.desc}</p><strong>${p.price}</strong>`;
+  productList.appendChild(div);
+});
+
+// Load pricing
+const pricing = [
+  { plan: "Basic", details: "Live Tracking + Alerts", price: "₹199/month" },
+  { plan: "Standard", details: "Tracking + Reports + History", price: "₹299/month" },
+  { plan: "Premium", details: "Fleet Management + Fuel Monitoring", price: "₹499/month" }
+];
+
+const pricingList = document.getElementById("pricing-list");
+pricing.forEach(p => {
+  let div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `<h3>${p.plan}</h3><p>${p.details}</p><strong>${p.price}</strong>`;
+  pricingList.appendChild(div);
+});
